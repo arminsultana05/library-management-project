@@ -1,10 +1,17 @@
 
 import './App.css';
+import Header from './Pages/Home/Shared/Header/Header';
+import LogIn from './Pages/LogIn/LogIn';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-    <h1>Hellow</h1>
+    <div className="">
+      <Header></Header>
+      <LogIn></LogIn>
+  
     </div>
   );
 }
