@@ -11,7 +11,7 @@ const SingleBook = ({book}) => {
                </div>
             </div>
             <div className="info">
-                <button>Request book</button>
+                <button className=''>Request book</button>
             </div>
             
         </div>
