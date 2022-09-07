@@ -8,6 +8,7 @@ import book6 from '../../../assets/images/book-6.png'
 import book7 from '../../../assets/images/book-7.png'
 import book8 from '../../../assets/images/book-8.png'
 import book9 from '../../../assets/images/book-9.png'
+import SingleBook from '../../SingleBook/SingleBook';
 import './AllBooks.css'
 
 const AllBooks = () => {
@@ -23,7 +24,18 @@ const AllBooks = () => {
     return (
         <div className='mid-container mt-36'>
             <h1 className='text-4xl font-bold border-b-[1px] pb-3 mb-5'>All Books</h1>
-          <div className="grid lg:grid-cols-4 mt-16 md:grid-cols-2 gap-3 ">
+            <div className="grid lg:grid-cols-4 mt-16 md:grid-cols-2 gap-4">
+            {
+              books.map(book=><SingleBook
+              key={book.id}
+              book={book}
+              >
+
+              </SingleBook>)
+            }
+            </div>
+
+          {/* <div className="grid lg:grid-cols-4 mt-16 md:grid-cols-2 gap-3 ">
           <div class="card card-compact w-60 bg-base-100 shadow-xl">
                 <figure><img src={book1}alt="Shoes" /></figure>
                 <div class="card-body">
@@ -66,7 +78,7 @@ const AllBooks = () => {
             </div>
          
         
-          </div>
+          </div> */}
         </div>
     );
 };
