@@ -3,16 +3,17 @@ import { Link, NavLink } from 'react-router-dom';
 
 
 const Header = () => {
+    
     const menueItems = <>
 
-        <li><a  className='rounded-xl mr-2' >Home </a></li>
+        <li><Link to='/' className='rounded-xl mr-2' >Home </Link></li>
         <li><a className='rounded-xl mr-2' >All Books </a></li>
         <li><a className='rounded-xl mr-2' href=''>About Us</a></li>
         <li><a className='rounded-xl mr-2' href=''>Gellery</a></li>
         <li><a className='rounded-xl mr-2' href=''>Services</a></li>
         <li><a className='rounded-xl mr-2' href=''>Contact Us</a></li>
         <li><a className='rounded-xl' href=''>Review</a></li>
-        <li><a className='rounded-xl bg-slate-800 text-white' href=''>LogIn</a></li>
+        <li><Link to='login' className='rounded-xl bg-slate-800 text-white' href=''>LogIn</Link></li>
   
 
 
