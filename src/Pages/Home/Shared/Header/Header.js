@@ -7,12 +7,12 @@ const Header = () => {
     const menueItems = <>
 
         <li><Link to='/' className='rounded-xl mr-2' >Home </Link></li>
-        <li><a className='rounded-xl mr-2' >All Books </a></li>
-        <li><a className='rounded-xl mr-2' href=''>About Us</a></li>
-        <li><a className='rounded-xl mr-2' href=''>Gellery</a></li>
-        <li><a className='rounded-xl mr-2' href=''>Review</a></li>
-        <li><a className='rounded-xl mr-2' href=''>Contact Us</a></li>
-        <li><a className='rounded-xl' href=''>Review</a></li>
+        <li><a className='rounded-xl mr-2' href='#about' >About Us </a></li>
+        <li><a className='rounded-xl mr-2' href='#book'>All Books</a></li>
+        <li><a className='rounded-xl mr-2' href='#gellery'>Gellery</a></li>
+        <li><a className='rounded-xl mr-2' href='#review'>Review</a></li>
+        <li><a className='rounded-xl mr-2' href='#contact'>Contact Us</a></li>
+      
         <li><Link to='login' className='rounded-xl bg-slate-800 text-white' href=''>LogIn</Link></li>
   
 

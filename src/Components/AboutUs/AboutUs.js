@@ -3,7 +3,7 @@ import photo from '../../assets/images/about.png'
 
 const AboutUs = () => {
     return (
-        <div className='mid-container'>
+        <div className='mid-container' id='about'>
              <h1 className='text-4xl font-bold border-b-[1px] pb-3   mt-20'>About Us</h1>
             <div class="hero mt-20 ">
                 <div class="hero-content flex-col lg:flex-row-reverse">

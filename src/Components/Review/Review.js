@@ -5,7 +5,7 @@ import test3 from '../../assets/images/test3.png'
 
 const Review = () => {
     return (
-        <div className='mid-container '>
+        <div className='mid-container ' id='review'>
         <h1 className='text-3xl font-semibold border-b-[1px] pb-3 mt-20'>Student Review</h1>
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto">

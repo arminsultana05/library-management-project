@@ -22,7 +22,7 @@ const AllBooks = () => {
     })
 
     return (
-        <div className='mid-container mt-36'>
+        <div className='mid-container mt-36' id='book'>
             <h1 className='text-4xl font-bold border-b-[1px] pb-3 mb-5'>All Books</h1>
             <div className="grid lg:grid-cols-4 mt-16 md:grid-cols-2 gap-4">
             {
