@@ -8,9 +8,9 @@ import Swal from 'sweetalert2'
 
 
 const LogIn = () => {
-    const navigate = useNavigate();
-    const location = useLocation()
-    let from =location.state?.from?.pathname || "/";
+    // const navigate = useNavigate();
+    // const location = useLocation()
+    
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -20,6 +20,9 @@ const LogIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     const onSubmit = (data,e) => {
         console.log(data);
@@ -32,18 +35,20 @@ const LogIn = () => {
             timer: 1500
           })
           
-          navigate('/dashboard')
+          navigate('/')
     }
     if(loading|| gLoading){
         return <Loading></Loading>
 
     }
     let signInError;
+    
+  
     if(error || gError){
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
     if (gUser || user) {
-        navigate (from,{replace: true});
+        navigate(from, { replace: true });
        
       
     }

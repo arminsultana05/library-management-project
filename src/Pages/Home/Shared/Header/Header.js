@@ -19,11 +19,14 @@ const Header = () => {
         <li><a className='rounded-xl mr-2' href='#gellery'>Gellery</a></li>
         <li><a className='rounded-xl mr-2' href='#review'>Review</a></li>
         <li><a className='rounded-xl mr-2' href='#contact'>Contact Us</a></li>
-        <li><Link to='dashboard' className='rounded-xl mr-2' >Dashboard </Link></li>
+        {
+            user&&  <li><Link to='dashboard' className='rounded-xl mr-2' >Dashboard </Link></li>
+        }
+       
         
        
       
-        <li>{user? <button onClick={logout} className='rounded-xl bg-slate-800 text-white' >SignOut</button>:<Link to='login' className='rounded-xl bg-slate-800 text-white' href=''>LogIn</Link>}</li>
+        <li>{user? <button onClick={logout} className='rounded-xl bg-slate-800 text-white' >LogOut</button>:<Link to='login' className='rounded-xl bg-slate-800 text-white' href=''>LogIn</Link>}</li>
   
 
 

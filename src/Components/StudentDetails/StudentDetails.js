@@ -1,10 +1,15 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import auth from '../../firebase.init';
 
 const StudentDetails = () => {
     const [user] = useAuthState(auth)
+    const navigate =useNavigate();
+    const sendDashboard =()=>{
+        navigate('/dashboard/my-request')
+    }
     const studentDetails = event => {
         event.preventDefault()
         const allInformation = {
@@ -43,7 +48,7 @@ const StudentDetails = () => {
 
     }
     return (
-        <div className='mid-container h-screen'>
+        <div className='mid-container '>
             <div className='mt-16'>
                 <h1 className="text-center text-5xl">Student Information</h1>
                 <form className=" w-full p-7 max-w-lg shadow-2xl mx-auto" onSubmit={studentDetails}>
@@ -77,7 +82,7 @@ const StudentDetails = () => {
                     </div>
                   
 
-                    <button className='btn mt-4 w-full'>Send Request</button>
+                    <button  className='btn mt-4 w-full'>Send Request</button>
                 </form>
             </div>
 
