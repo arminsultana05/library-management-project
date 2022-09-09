@@ -1,8 +1,15 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../../../../firebase.init';
 
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+      };
     
     const menueItems = <>
 
@@ -13,7 +20,7 @@ const Header = () => {
         <li><a className='rounded-xl mr-2' href='#review'>Review</a></li>
         <li><a className='rounded-xl mr-2' href='#contact'>Contact Us</a></li>
       
-        <li><Link to='login' className='rounded-xl bg-slate-800 text-white' href=''>LogIn</Link></li>
+        <li>{user? <button onClick={logout} className='rounded-xl bg-slate-800 text-white' >SignOut</button>:<Link to='login' className='rounded-xl bg-slate-800 text-white' href=''>LogIn</Link>}</li>
   
 
 

@@ -3,10 +3,12 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../../Loading/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 
 const LogIn = () => {
+    const navigate = useNavigate();
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -17,9 +19,22 @@ const LogIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const onSubmit = (data) => {
+    const onSubmit = (data,e) => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Successfully LogIn',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          if (gUser || user) {
+            e.target.name.value='';
+            e.target.email.value='';
+            e.target.password.value='';
+         }
+          navigate('/dashboard')
     }
     if(loading|| gLoading){
         return <Loading></Loading>
@@ -30,7 +45,7 @@ const LogIn = () => {
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
     if (gUser || user) {
-        console.log(user ||gUser);
+      
     }
 
 

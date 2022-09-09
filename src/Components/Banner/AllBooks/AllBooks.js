@@ -14,7 +14,7 @@ import './AllBooks.css'
 const AllBooks = () => {
     const [books, setAllBooks] = useState([]);
     useEffect(() => {
-        fetch('books.json')
+        fetch('http://localhost:5000/books')
             .then(res => res.json())
             .then(data => setAllBooks(data))
         console.log(books);
