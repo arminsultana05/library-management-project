@@ -3,12 +3,14 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../../Loading/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 
 const LogIn = () => {
     const navigate = useNavigate();
+    const location = useLocation()
+    let from =location.state?.from?.pathname || "/";
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -29,11 +31,7 @@ const LogIn = () => {
             showConfirmButton: false,
             timer: 1500
           })
-          if (gUser || user) {
-            e.target.name.value='';
-            e.target.email.value='';
-            e.target.password.value='';
-         }
+          
           navigate('/dashboard')
     }
     if(loading|| gLoading){
@@ -45,6 +43,8 @@ const LogIn = () => {
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
     if (gUser || user) {
+        navigate (from,{replace: true});
+       
       
     }
 

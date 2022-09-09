@@ -3,13 +3,16 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../../Loading/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MdEventBusy } from 'react-icons/md';
 import { async } from '@firebase/util';
 import Swal from 'sweetalert2'
 
 const Register = () => {
     const navigate = useNavigate()
+   ;
+    const location = useLocation()
+    let from =location.state?.from?.pathname|| "/";
       const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
       const [
         createUserWithEmailAndPassword,
@@ -45,6 +48,7 @@ const Register = () => {
         signInError= <p className='text-red-500'><small>{updateError?.message||error?.message|| gError?.message}</small></p>
     }
     if (gUser|| user ) {
+        navigate(from, {replace :true});
        
         
         

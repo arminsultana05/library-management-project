@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SingleBook.css'
 
 const SingleBook = ({book}) => {
+    const navigate = useNavigate()
+    const handle=()=>{
+        navigate('/student-details')
+
+    }
    const {id, img}=book;
     return (
         <div className='card'>
@@ -11,7 +17,7 @@ const SingleBook = ({book}) => {
                </div>
             </div>
             <div className="info">
-                <button className=''>Request book</button>
+                <button onClick={handle} className=''>Request book</button>
             </div>
             
         </div>
