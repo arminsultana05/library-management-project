@@ -1,0 +1,56 @@
+[debug] [2022-09-10T09:12:17.063Z] ----------------------------------------------------------------------
+[debug] [2022-09-10T09:12:17.077Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-09-10T09:12:17.080Z] CLI Version:   11.8.1
+[debug] [2022-09-10T09:12:17.081Z] Platform:      win32
+[debug] [2022-09-10T09:12:17.082Z] Node Version:  v16.14.2
+[debug] [2022-09-10T09:12:17.113Z] Time:          Sat Sep 10 2022 15:12:17 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-09-10T09:12:17.115Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-10T09:12:17.487Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-10T09:12:17.488Z] > authorizing via signed-in user (haquesamsul424@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  G:\College-project\Library-Management-system\library-management-project
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Account Setup
+[info] 
+[info] Which account do you want to use for this project? Choose an account or add a new one now
+[info] 
+[debug] [2022-09-10T09:13:21.216Z] setProjectAccount(G:\College-project\Library-Management-system\library-management-project, arminsultana556@gmail.com)
+[info] 
+[info] +  Using account: arminsultana556@gmail.com 
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-09-10T09:13:21.459Z] Using project from CLI flag: library-management-b4a55
+[debug] [2022-09-10T09:13:21.498Z] > refreshing access token with scopes: []
+[debug] [2022-09-10T09:13:21.503Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-09-10T09:13:21.503Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-09-10T09:13:31.303Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-09-10T09:13:31.303Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-09-10T09:13:31.379Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/library-management-b4a55 [none]
+[debug] [2022-09-10T09:13:32.813Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/library-management-b4a55 403
+[debug] [2022-09-10T09:13:32.813Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/library-management-b4a55 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-09-10T09:13:32.814Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-09-10T09:13:33.942Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\Hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project library-management-b4a55. Please make sure the project exists and your account has permission to access it.
