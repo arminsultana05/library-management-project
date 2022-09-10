@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { VscBook } from 'react-icons/vsc';
@@ -7,9 +7,16 @@ import { FaQuestion } from 'react-icons/fa';
 import { TbGitPullRequestClosed } from 'react-icons/tb';
 import { RiAdminLine } from 'react-icons/ri';
 import { BiImageAdd } from 'react-icons/bi';
+import useAdmin from '../../hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Dashboard = () => {
+    const [user] =useAuthState(auth)
+    const [admin] =useAdmin(user)
     return (
+        
+      
         <div class="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content ">
@@ -30,7 +37,7 @@ const Dashboard = () => {
                     <li className='mt-5'><Link to ='/dashboard/all-request'><TbGitPullRequestClosed></TbGitPullRequestClosed>Students-Request</Link></li>
                 
                     <li className='mt-5'><Link to ='/dashboard/make-admin'><RiAdminLine></RiAdminLine>Make-admin</Link></li>
-                    <li className='mt-5'><Link to ='/dashboard/add-books'><BiImageAdd></BiImageAdd>Add Books</Link></li>
+                    {/* <li className='mt-5'><Link to ='/dashboard/add-books'><BiImageAdd></BiImageAdd>Add Books</Link></li> */}
                 </ul>
 
             </div>

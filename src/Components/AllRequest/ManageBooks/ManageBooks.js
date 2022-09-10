@@ -4,7 +4,7 @@ import SingleBook from '../../SingleBook/SingleBook';
 const ManageBooks = () => {
     const [books, setAllBooks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://thawing-savannah-50233.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setAllBooks(data))
         console.log(books);

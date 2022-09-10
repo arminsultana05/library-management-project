@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 const AllRequest = () => {
      const [allrequest, setAllrequest] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/all-request')
+        fetch('https://thawing-savannah-50233.herokuapp.com/all-request')
             .then(res => res.json())
             .then(data => setAllrequest(data))
-        console.log(allrequest);
+       
 
     })
 

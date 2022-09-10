@@ -13,7 +13,7 @@ const MyRequest = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/request?email=${user.email}`)
+      fetch(`https://thawing-savannah-50233.herokuapp.com/request?email=${user.email}`)
         .then(res => res.json())
         .then(data => setRequest(data));
     }
@@ -31,7 +31,7 @@ const MyRequest = () => {
   //       })
   //       .then((willDelete) => {
   //         if (willDelete) {
-  //             const url = `http://localhost:5000/request/:${id}`;
+  //             const url = `https://thawing-savannah-50233.herokuapp.com/request/:${id}`;
   //             fetch(url, {
   //                 method: 'DELETE'
   //             })

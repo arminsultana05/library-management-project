@@ -19,7 +19,7 @@ const StudentDetails = () => {
             subject: event.target.subject.value,
            
         }
-        fetch('http://localhost:5000/student', {
+        fetch('https://thawing-savannah-50233.herokuapp.com/student', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
